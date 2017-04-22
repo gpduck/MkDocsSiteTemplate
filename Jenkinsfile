@@ -1,4 +1,5 @@
 node {
+    checkout scm
     stage('Install') {
         if(isUnix()) {
             sh 'pip install -r requirements.txt'
