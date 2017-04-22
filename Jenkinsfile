@@ -9,7 +9,9 @@ node {
     }
     stage('Build') {
         if(isUnix()) {
-            sh 'mkdocs build'
+            withEnv(['PATH+=~/.local/bin']) {
+                sh 'mkdocs build'
+            }
         } else {
             bat 'mkdocs build'
         }
