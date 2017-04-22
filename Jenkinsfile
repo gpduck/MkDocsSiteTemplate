@@ -4,15 +4,19 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                script {
-                    execute 'pip install -r requirements.txt'
+                if(isUnix()) {
+                    sh 'pip install -r requirements.txt'
+                } else {
+                    bat 'pip install -r requirements.txt'
                 }
             }
         }
         stage('Build') {
             steps {
-                script {
-                    execute  'mkdocs build'
+                if(isUnix()) {
+                    sh 'mkdocs build'
+                } else {
+                    bat 'mkdocs build'
                 }
             }
         }
