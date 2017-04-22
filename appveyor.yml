@@ -1,0 +1,9 @@
+install:
+  - pip install -r requirements.txt
+
+build_script:
+  - mkdocs build
+  - nuget pack MKDocsSiteTemplate.nuspec
+
+artifacts:
+  - path: '*.nupkg'
