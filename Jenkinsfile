@@ -14,11 +14,12 @@ node {
         }
     }
     stage('Pack') {
-        dir 'site'
-        if(isUnix()) {
-            sh 'tar -cf ../${JOB_BASE_NAME}-${BUILD_NUMBER}.tar ./*'
-        } else {
-            bat 'powershell -command "compress-archive -DestinationPath ..\\${env:JOB_BASE_NAME}-${env:BUILD_NUMBER}.zip -Path .\\"'
+        dir 'site' {
+            if(isUnix()) {
+                sh 'tar -cf ../${JOB_BASE_NAME}-${BUILD_NUMBER}.tar ./*'
+            } else {
+                bat 'powershell -command "compress-archive -DestinationPath ..\\${env:JOB_BASE_NAME}-${env:BUILD_NUMBER}.zip -Path .\\"'
+            }
         }
         archiveArtifacts artifacts: '*.zip,*.tar'
     }
