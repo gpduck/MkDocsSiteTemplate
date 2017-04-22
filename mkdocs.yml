@@ -4,7 +4,7 @@ repo_url: http://github.com/gpduck/MKDocsSiteTemplate/
 repo_name: GitHub
 edit_uri: edit/MKDocsSiteTemplate/docs/
 extra_css:
-    - theme_dir/css/codehilite.css
+    - theme_dir/css/custom.css
 markdown_extensions:
     - pymdownx.superfences
     - meta

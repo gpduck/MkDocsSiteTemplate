@@ -1,0 +1,16 @@
+/* put a border around code blocks and re-enable the horizontal scroll bar */
+.codehilite {
+    overflow-x: auto;
+    border: solid 1px #e1e4e5;
+    margin-bottom: 8px;
+}
+
+/* reduce the margin around code blocks */
+.codehilite pre {
+    margin: 8px;
+}
+
+/* don't restrict content width */
+.wy-nav-content {
+    max-width: unset;
+}
