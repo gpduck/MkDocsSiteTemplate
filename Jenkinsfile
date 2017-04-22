@@ -17,7 +17,7 @@ node {
     stage('Pack') {
         dir('site') {
             if(isUnix()) {
-                sh 'tar -cf ../${JOB_BASE_NAME}-${BUILD_NUMBER}.tar ./*'
+                sh 'tar -cf ../${JOB_BASE_NAME}-${BUILD_NUMBER}.tar *'
             } else  {
                 bat 'powershell -noprofile -command "compress-archive -DestinationPath ..\\${env:JOB_BASE_NAME}-${env:BUILD_NUMBER}.zip -Path .\\*"'
             }
