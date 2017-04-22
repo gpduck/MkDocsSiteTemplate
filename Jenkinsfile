@@ -1,25 +1,19 @@
 node {
     stage('Install') {
-        steps {
-            if(isUnix()) {
-                sh 'pip install -r requirements.txt'
-            } else {
-                bat 'pip install -r requirements.txt'
-            }
+        if(isUnix()) {
+            sh 'pip install -r requirements.txt'
+        } else {
+            bat 'pip install -r requirements.txt'
         }
     }
     stage('Build') {
-        steps {
-            if(isUnix()) {
-                sh 'mkdocs build'
-            } else {
-                bat 'mkdocs build'
-            }
+        if(isUnix()) {
+            sh 'mkdocs build'
+        } else {
+            bat 'mkdocs build'
         }
     }
     stage('Pack') {
-        steps {
-            archiveArtifacts artifacts: 'site/**/*.*'
-        }
+        archiveArtifacts artifacts: 'site/**/*.*'
     }
 }
