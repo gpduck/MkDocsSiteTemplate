@@ -13,7 +13,9 @@ pipeline {
             }
         }
         stage('Pack') {
-            archiveArtifacts artifacts: 'site/**/*.*'
+            steps {
+                archiveArtifacts artifacts: 'site/**/*.*'
+            }
         }
     }
 }
