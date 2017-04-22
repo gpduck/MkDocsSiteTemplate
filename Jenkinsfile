@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'pip install -r requirements.txt'
+                execute 'pip install -r requirements.txt'
             }
         }
         stage('Build') {
             steps {
-                sh 'mkdocs build'
+                execute 'mkdocs build'
             }
         }
         stage('Pack') {
