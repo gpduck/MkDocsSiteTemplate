@@ -14,7 +14,7 @@ node {
         }
     }
     stage('Pack') {
-        dir 'site' {
+        dir('site') {
             if(isUnix()) {
                 sh 'tar -cf ../${JOB_BASE_NAME}-${BUILD_NUMBER}.tar ./*'
             } else {
