@@ -1,6 +1,4 @@
 node {
-    agent any
-
     stages {
         stage('Install') {
             steps {
